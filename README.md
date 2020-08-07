@@ -35,7 +35,7 @@ On the PHP side there are not much requirements, you only need at least PHP 5.6 
 # Install
 First you need to install [Composer](https://getcomposer.org/doc/00-intro.md), after you accomplished this you can go ahead:
 ```
-composer require padrio/php-electrum-api
+composer require hiidemo/php-electrum-api
 ```
 Then you can simply include the autoloader and begin using the library:
 ```php
@@ -49,7 +49,8 @@ require_once 'vendor/autoloader.php';
 A very basic useage example. Every API-Call has it's own request-object. You simply create one and execute it.
 ```php
 
-$method = new \Electrum\Request\Method\Version();
+$client = new \Electrum\Client('http://127.0.0.1', 7777, 0, 'username', 'password');
+$method = new \Electrum\Request\Method\Version($client);
 
 try {
     $response = $method->execute();
