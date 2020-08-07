@@ -75,7 +75,7 @@ class Client
     {
         // Create request payload
         $request = $this->createRequest($method, $params);
-
+        // die(var_dump($request));
         // Retrieve electrum api response
         $response = $this->executeCurlRequest($request);
 
@@ -101,6 +101,7 @@ class Client
     {
         // Build request string
         $request = json_encode([
+            "jsonrpc"=>"2.0",
             'method' => $method,
             'params' => $params,
             'id'     => $this->getNextId(),

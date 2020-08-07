@@ -34,6 +34,6 @@ class ElectrumResponseException extends Exception
             $code = $response['error']['code'];
         }
 
-        return new self($message, $code);
+        return new BadResponseException($message, $code);
     }
 }

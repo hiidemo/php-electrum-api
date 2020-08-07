@@ -17,7 +17,7 @@ class AddRequest extends AbstractMethod implements MethodInterface
     /**
      * @var string
      */
-    private $method = 'addrequest';
+    private $method = 'add_request';
 
     /**
      * Bitcoin amount to request
