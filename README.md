@@ -69,6 +69,17 @@ $response->getVersion();
     echo $tx->getAddress();
 ```
 
+## Get balance address
+```php
+    $client = new \Electrum\Client('http://127.0.0.1', 7777, 0, 'user', 'password');
+    $wallet = new \Electrum\Request\Method\Address\GetAddressBalance($client);
+
+    $wallet->setAddress('thisisaaddress');
+    $tx = $wallet->execute();
+
+    die(var_dump($tx));
+```
+
 ## Make a new Payment
 ```php
     $client = new \Electrum\Client('http://127.0.0.1', 7777, 0, 'user', 'password');
