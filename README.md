@@ -28,6 +28,10 @@ Since some new version electrum wants you to load your wallet by hand on startup
 ```
 electrum daemon load_wallet
 ```
+Change gap limit (There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit)
+```
+electrum changegaplimit 200
+```
 
 # Requirements
 On the PHP side there are not much requirements, you only need at least PHP 5.6 and the curl-Extension installed. Then you can go ahead ans it through [Composer](http://getcomposer.org) which will do everything else for you.
